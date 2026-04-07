@@ -17,12 +17,52 @@ nav a:hover{background:#fff;color:#ff6b6b}
 .container{max-width:1400px;margin:auto;padding:30px 18px}
 h2{text-align:center;margin-bottom:25px;font-weight:600}
 
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;counter-reset:cake}
 
-.card{background:#fff;border-radius:16px;padding:12px;box-shadow:0 6px 20px rgba(0,0,0,.05);transition:.3s}
+.card{background:#fff;border-radius:16px;padding:12px;box-shadow:0 6px 20px rgba(0,0,0,.05);transition:.3s;counter-increment:cake}
 .card:hover{transform:translateY(-6px);box-shadow:0 12px 28px rgba(0,0,0,.08)}
 
-.card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;transition:transform .4s ease}
+.card img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border-radius:12px;
+  transition:transform .4s ease;
+  -webkit-user-drag:none;
+  user-select:none;
+}
+
+.card{
+  position:relative;
+}
+
+.card::after{
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  width:120px;
+  height:120px;
+  background:url('images/Aadesh Bakery.png') no-repeat center;
+  background-size:contain;
+  opacity:0.15;
+  pointer-events:none;
+}
+
+.card::before{
+  content:"REG-" counter(cake);
+  position:absolute;
+  top:10px;
+  left:10px;
+  background:#ff6b6b;
+  color:#fff;
+  font-size:11px;
+  font-weight:600;
+  padding:4px 8px;
+  border-radius:20px;
+  z-index:2;
+}
 .card:hover img{transform:scale(1.1)}
 
 .card h4{margin:10px 0 4px;font-size:14px}
@@ -905,6 +945,27 @@ h2{text-align:center;margin-bottom:25px;font-weight:600}
 </div>
 
 </div>
+
+<script>
+// Disable right click
+window.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+
+// Disable image drag
+window.addEventListener('dragstart', function(e){ e.preventDefault(); });
+
+// Disable common shortcuts (view source, save, inspect)
+document.addEventListener('keydown', function(e){
+  if(e.ctrlKey && (e.key === 's' || e.key === 'u')){
+    e.preventDefault();
+  }
+  if(e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')){
+    e.preventDefault();
+  }
+  if(e.key === 'F12'){
+    e.preventDefault();
+  }
+});
+</script>
 
 </body>
 </html>
