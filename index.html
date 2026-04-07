@@ -965,6 +965,22 @@ document.addEventListener('keydown', function(e){
     e.preventDefault();
   }
 });
+// Add copyright text watermark automatically
+document.querySelectorAll('.card').forEach(card => {
+  const wm = document.createElement('div');
+  wm.innerText = 'AADESH BAKERY (JIVRAJ PARK)';
+  wm.style.position = 'absolute';
+  wm.style.bottom = '8px';
+  wm.style.left = '50%';
+  wm.style.transform = 'translateX(-50%)';
+  wm.style.fontSize = '10px';
+  wm.style.background = 'rgba(0,0,0,0.6)';
+  wm.style.color = '#fff';
+  wm.style.padding = '2px 6px';
+  wm.style.borderRadius = '8px';
+  wm.style.pointerEvents = 'none';
+  card.appendChild(wm);
+});
 </script>
 
 </body>
