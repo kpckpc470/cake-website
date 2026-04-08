@@ -72,7 +72,7 @@ h2{text-align:center;margin-bottom:25px;font-weight:600}
 }
 
 .card::before{
-  content:"REG-" counter(cake);
+  content: attr(data-id);
   position:absolute;
   top:10px;
   left:10px;
@@ -1579,16 +1579,11 @@ window.addEventListener('dragstart', function(e){ e.preventDefault(); });
 
 // Disable common shortcuts (view source, save, inspect)
 document.addEventListener('keydown', function(e){
-  if(e.ctrlKey && (e.key === 's' || e.key === 'u')){
-    e.preventDefault();
-  }
-  if(e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')){
-    e.preventDefault();
-  }
-  if(e.key === 'F12'){
-    e.preventDefault();
-  }
+  if(e.ctrlKey && (e.key === 's' || e.key === 'u')) e.preventDefault();
+  if(e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) e.preventDefault();
+  if(e.key === 'F12') e.preventDefault();
 });
+
 // Add copyright text watermark automatically
 document.querySelectorAll('.card').forEach(card => {
   const wm = document.createElement('div');
@@ -1606,6 +1601,20 @@ document.querySelectorAll('.card').forEach(card => {
   card.appendChild(wm);
 });
 
+// UPDATE IDS
+function updateIDs(category='all'){
+  const cards = document.querySelectorAll('.card');
+  let count = 1;
+  const main = 'REG';
+  const sub = category === 'all' ? 'AL' : category.slice(0,3).toUpperCase();
+
+  cards.forEach(card => {
+    if(card.style.display !== 'none'){
+      card.setAttribute('data-id', `${main}-${sub}-${count}`);
+      count++;
+    }
+  });
+}
 
 // SORT FUNCTION
 function sortCakes(type){
@@ -1620,10 +1629,12 @@ function sortCakes(type){
     });
   }
 
-  // re-append sorted
   cards.forEach(card => container.appendChild(card));
-}
 
+  const active = document.querySelector('.filter-btn.active');
+  const cat = active ? active.innerText.toLowerCase() : 'all';
+  updateIDs(cat);
+}
 
 // CATEGORY FILTER
 function filterCake(category, btn){
@@ -1648,8 +1659,14 @@ function filterCake(category, btn){
       card.style.display = 'none';
     }
   });
+
+  updateIDs(category);
 }
 
+// INITIAL LOAD IDS
+window.addEventListener('DOMContentLoaded', () => {
+  updateIDs('all');
+});
 </script>
 
 </body>
