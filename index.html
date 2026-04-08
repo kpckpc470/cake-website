@@ -123,6 +123,31 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 /* MOBILE */
 @media(max-width:600px){.products{grid-template-columns:repeat(2,1fr);gap:14px}}
 @media(max-width:400px){.products{grid-template-columns:1fr}}
+
+/* IMAGE WATERMARK OVERLAY */
+.card .wm-overlay{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  pointer-events:none;
+}
+.card .wm-overlay span{
+  font-size:14px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:rgba(43,26,18,0.18);
+  border:1px solid rgba(43,26,18,0.15);
+  padding:6px 14px;
+  border-radius:20px;
+  transform:rotate(-18deg);
+  background:rgba(255,255,255,0.2);
+}
+
+/* ensure image is under overlay */
+.card img{position:relative;z-index:1}
+.card .wm-overlay{z-index:2}
 </style>
 </head>
 <body>
@@ -169,6 +194,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Kiwi Strawberry Glaze Cake</h4>
 <div class="price">₹400</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 2 -->
@@ -177,6 +203,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Caramel Almond Crunch Cake</h4>
 <div class="price">₹430</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 
@@ -186,6 +213,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>White Chocolate Marble Cake</h4>
 <div class="price">₹420</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 
@@ -195,6 +223,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Coconut Cream Classic Cake</h4>
 <div class="price">₹410</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 5 -->
@@ -203,6 +232,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Oreo Chocolate Drip Cake</h4>
 <div class="price">₹460</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 6 -->
@@ -211,6 +241,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Ferrero Rocher Premium Cake</h4>
 <div class="price">₹650</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 7 -->
@@ -219,6 +250,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Dark Chocolate Crunch Cake</h4>
 <div class="price">₹440</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 8 -->
@@ -227,6 +259,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Classic Chocolate Truffle Cake</h4>
 <div class="price">₹500</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 9 -->
@@ -235,6 +268,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Black Forest Cherry Cake</h4>
 <div class="price">₹430</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 
@@ -245,6 +279,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Rasmalai Pistachio Delight Cake</h4>
 <div class="price">₹440</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 11 -->
@@ -253,6 +288,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Cherry Cream Chocolate Disk Cake</h4>
 <div class="price">₹470</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 12 -->
@@ -261,6 +297,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Ferrero Hazelnut Chocolate Cake</h4>
 <div class="price">₹650</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 13 -->
@@ -269,6 +306,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Web Design Cake</h4>
 <div class="price">₹460</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 14 -->
@@ -277,6 +315,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Mango Cream Celebration Cake</h4>
 <div class="price">₹500</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 15 -->
@@ -285,6 +324,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Shavings Luxury Cake</h4>
 <div class="price">₹480</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 16 -->
@@ -293,6 +333,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Premium Chocolate Ring Cake</h4>
 <div class="price">₹470</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 17 -->
@@ -301,6 +342,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Choco Drip Party Cake</h4>
 <div class="price">₹440</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 18 -->
@@ -309,6 +351,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Disk Delight Cake</h4>
 <div class="price">₹440</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 19 -->
@@ -317,6 +360,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Designer Chocolate Cone Cake</h4>
 <div class="price">₹440</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 20 -->
@@ -325,6 +369,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Butterscotch Crunch Designer Cake</h4>
 <div class="price">₹480</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 21 -->
@@ -333,6 +378,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Strawberry Glaze Cake</h4>
 <div class="price">₹420</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 22 -->
@@ -341,6 +387,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Caramel Chips Crunch Cake</h4>
 <div class="price">₹440</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 23 -->
@@ -349,6 +396,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Pineapple Almond Classic Cake</h4>
 <div class="price">₹450</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 24 -->
@@ -357,6 +405,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Red Velvet Cream Ring Cake</h4>
 <div class="price">₹550</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 25 -->
@@ -365,6 +414,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Square Fudge Cake</h4>
 <div class="price">₹520</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 26 -->
@@ -373,6 +423,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Fig Chocolate Premium Cake</h4>
 <div class="price">₹450</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 
@@ -383,6 +434,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Pineapple Cream Ring Cake</h4>
 <div class="price">₹430</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 28 -->
@@ -391,6 +443,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Ganache Dollops Cake</h4>
 <div class="price">₹520</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 29 -->
@@ -399,6 +452,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Shard Designer Cake</h4>
 <div class="price">₹440</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 30 -->
@@ -407,6 +461,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>KitKat Oreo Birthday Cake</h4>
 <div class="price">₹480</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 31 -->
@@ -415,6 +470,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Pineapple Glaze Delight Cake</h4>
 <div class="price">₹420</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 32 -->
@@ -423,6 +479,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Rasmalai-Pista Rose Celebration Cake</h4>
 <div class="price">₹520</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 33 -->
@@ -431,6 +488,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Red Velvet Classic Cake</h4>
 <div class="price">₹550</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 34 -->
@@ -439,6 +497,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Strawberry Glaze Designer Cake</h4>
 <div class="price">₹430</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 35 -->
@@ -447,6 +506,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Blueberry Cake</h4>
 <div class="price">₹400</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 36 -->
@@ -455,6 +515,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Overload Birthday Cake</h4>
 <div class="price">₹500</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 37 -->
@@ -463,6 +524,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Dark Chocolate Truffle Spiral Cake</h4>
 <div class="price">₹520</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 38 -->
@@ -471,6 +533,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Hazelnut Chocolate Slice Cake</h4>
 <div class="price">₹750</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 39 -->
@@ -479,6 +542,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Drip Minimal Cake</h4>
 <div class="price">₹400</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 
@@ -489,6 +553,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Caramel Butterscotch Drip Cake</h4>
 <div class="price">₹440</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 42 -->
@@ -497,6 +562,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Blueberry Mirror Ring Cake</h4>
 <div class="price">₹460</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 43 -->
@@ -505,6 +571,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Half Moon Designer Cake</h4>
 <div class="price">₹420</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 44 -->
@@ -513,6 +580,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Butterscotch Web Cream Cake</h4>
 <div class="price">₹440</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 45 -->
@@ -521,6 +589,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Blackcurrant Glaze Cake</h4>
 <div class="price">₹420</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 47 -->
@@ -529,6 +598,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Classic Black Forest Cherry Cake</h4>
 <div class="price">₹420</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 48 -->
@@ -537,6 +607,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Fresh Fruit Loaded Cake</h4>
 <div class="price">₹550</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 49 -->
@@ -545,6 +616,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>White Chocolate Panel Cake</h4>
 <div class="price">₹460</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 50 -->
@@ -553,6 +625,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Heart Shape Cake</h4>
 <div class="price">₹480</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 51 -->
@@ -561,6 +634,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Caramel Drip Swirl Cake</h4>
 <div class="price">₹480</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 52 -->
@@ -569,6 +643,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Blueberry Cream Floral Cake</h4>
 <div class="price">₹520</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 53 -->
@@ -577,6 +652,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Mango Delight Cake</h4>
 <div class="price">₹500</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 54 -->
@@ -585,6 +661,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Strawberry Chocolate Fusion Cake</h4>
 <div class="price">₹520</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 55 -->
@@ -593,6 +670,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Ferrero Nutella Premium Cake</h4>
 <div class="price">₹750</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 56 -->
@@ -601,6 +679,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Ferrero Chocolate Ring Cake</h4>
 <div class="price">₹720</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 57 -->
@@ -609,6 +688,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>White Chocolate Cherry Drip Cake</h4>
 <div class="price">₹460</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 58 -->
@@ -617,6 +697,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Oreo Crunch Cream Cake</h4>
 <div class="price">₹450</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 59 -->
@@ -625,6 +706,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Almond Chocolate Crunch Cake</h4>
 <div class="price">₹520</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 
@@ -635,6 +717,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Royal Pista Rose Celebration Cake</h4>
 <div class="price">₹530</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 61 -->
@@ -643,6 +726,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Chip Classic Cream Cake</h4>
 <div class="price">₹480</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 62 -->
@@ -651,6 +735,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Pista Rose Delight Cake</h4>
 <div class="price">₹500</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 63 -->
@@ -659,6 +744,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Blueberry Sky Cream Cake</h4>
 <div class="price">₹480</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 65 -->
@@ -667,6 +753,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Red Velvet Candy Crunch Cake</h4>
 <div class="price">₹550</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 66 -->
@@ -675,6 +762,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Pink Blush Celebration Cake</h4>
 <div class="price">₹440</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 67 -->
@@ -683,6 +771,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Drip Coffee Delight Cake</h4>
 <div class="price">₹440</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 68 -->
@@ -691,6 +780,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Mango Crush Fresh Cream Cake</h4>
 <div class="price">₹480</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 69 -->
@@ -699,6 +789,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Strawberry Heart Cream Cake</h4>
 <div class="price">₹460</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 70 -->
@@ -707,6 +798,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Glaze Premium Cake</h4>
 <div class="price">₹420</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 71 -->
@@ -715,6 +807,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Almond Crunch Pineapple Cake</h4>
 <div class="price">₹460</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 74 -->
@@ -723,6 +816,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>KitKat Chocolate Drip Loaded Cake</h4>
 <div class="price">₹580</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 75 -->
@@ -731,6 +825,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Classic Chocolate Birthday Cream Cake</h4>
 <div class="price">₹420</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 76 -->
@@ -739,6 +834,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Gloss Classic Cake</h4>
 <div class="price">₹420</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 77 -->
@@ -747,6 +843,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Blackcurrant Designer Ribbon Cake</h4>
 <div class="price">₹400</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 78 -->
@@ -755,6 +852,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Oreo Chocolate Sprinkle Blast Cake</h4>
 <div class="price">₹500</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 79 -->
@@ -763,6 +861,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Fresh Fruit Almond Crunch Cake</h4>
 <div class="price">₹600</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 80 -->
@@ -771,6 +870,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Rasmalai Pistachio Cake</h4>
 <div class="price">₹550</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 81 -->
@@ -779,6 +879,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Blueberry Cake</h4>
 <div class="price">₹430</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 82 -->
@@ -787,6 +888,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Cherry Chocolate Shavings Cake</h4>
 <div class="price">₹400</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 83 -->
@@ -795,6 +897,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Dark Chocolate Chip Designer Cake</h4>
 <div class="price">₹480</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 84 -->
@@ -803,6 +906,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Hazelnut Crunch Chocolate Cake</h4>
 <div class="price">₹600</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 85 -->
@@ -811,6 +915,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Shield Premium Cake</h4>
 <div class="price">₹450</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 86 -->
@@ -819,6 +924,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Berry Glaze Designer Cake</h4>
 <div class="price">₹420</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 87 -->
@@ -827,6 +933,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Caramel Heart Celebration Cake</h4>
 <div class="price">₹500</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 89 -->
@@ -835,6 +942,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Truffle Rose Ring Cake</h4>
 <div class="price">₹540</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 90 -->
@@ -843,6 +951,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Classic Black Forest Cake</h4>
 <div class="price">₹520</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 91 -->
@@ -851,6 +960,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Black Forest Cake</h4>
 <div class="price">₹430</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 92 -->
@@ -859,6 +969,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Choco-Vanilla Half Cake</h4>
 <div class="price">₹440</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 93 -->
@@ -867,6 +978,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>White Chocolate Flake Cake</h4>
 <div class="price">₹450</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 94 -->
@@ -875,6 +987,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Oreo Drip Chocolate Cake</h4>
 <div class="price">₹440</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 95 -->
@@ -883,6 +996,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>White Chocolate Marble Premium Cake</h4>
 <div class="price">₹450</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 97 -->
@@ -891,6 +1005,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Panel Designer Cake</h4>
 <div class="price">₹480</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 98 -->
@@ -899,6 +1014,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Ferrero Rocher Classic Cake</h4>
 <div class="price">₹700</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 99 -->
@@ -907,6 +1023,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Hazelnut Almond Crunch Cake</h4>
 <div class="price">₹560</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 100 -->
@@ -915,6 +1032,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Red Velvet Chocolate Chip Cake</h4>
 <div class="price">₹600</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 101 -->
@@ -923,6 +1041,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Classic Red Velvet Cherry Cake</h4>
 <div class="price">₹550</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 102 -->
@@ -931,6 +1050,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Dark Chocolate Ganache Premium Cake</h4>
 <div class="price">₹620</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 103 -->
@@ -939,6 +1059,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Vanilla Cherry Classic Cream Cake</h4>
 <div class="price">₹400</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 104 -->
@@ -947,6 +1068,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Fruit Red Velvet Fusion Cake</h4>
 <div class="price">₹600</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 105 -->
@@ -955,6 +1077,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Ring Minimal Designer Cake</h4>
 <div class="price">₹400</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 106 -->
@@ -963,6 +1086,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>KitKat Gems Loaded Cake</h4>
 <div class="price">₹700</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 107 -->
@@ -971,6 +1095,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Mirror Finish Cake</h4>
 <div class="price">₹400</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 108 -->
@@ -979,6 +1104,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Walnut Coffee Cream Cake</h4>
 <div class="price">₹560</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 109 -->
@@ -987,6 +1113,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Ribbon Designer Cake</h4>
 <div class="price">₹480</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 110 -->
@@ -995,6 +1122,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Pineapple Cherry Cream Cake</h4>
 <div class="price">₹450</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 111 -->
@@ -1003,6 +1131,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Pineapple Designer Celebration Cake</h4>
 <div class="price">₹450</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 112 -->
@@ -1011,6 +1140,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Pineapple Crush Cake</h4>
 <div class="price">₹440</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 
@@ -1020,6 +1150,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Dark Chocolate Dual Swirl Cake</h4>
 <div class="price">₹520</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 114 -->
@@ -1028,6 +1159,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Strawberry Cream Classic Cake</h4>
 <div class="price">₹420</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 115 -->
@@ -1036,6 +1168,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Fresh Fruit Celebration Cake</h4>
 <div class="price">₹500</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 116 -->
@@ -1044,6 +1177,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Black Forest Birthday Special Cake</h4>
 <div class="price">₹460</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 117 -->
@@ -1052,6 +1186,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Flake Ring Cake</h4>
 <div class="price">₹480</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 118 -->
@@ -1060,6 +1195,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Anniversary Chocolate Designer Cake</h4>
 <div class="price">₹500</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 119 -->
@@ -1068,6 +1204,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Drip Cherry Cake</h4>
 <div class="price">₹480</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 120 -->
@@ -1076,6 +1213,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Heart Ring Cake</h4>
 <div class="price">₹500</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 121 -->
@@ -1084,6 +1222,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Blueberry Cream Layer Cake</h4>
 <div class="price">₹520</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 122 -->
@@ -1092,6 +1231,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Butterscotch Crunch Layer Cake</h4>
 <div class="price">₹460</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 123 -->
@@ -1100,6 +1240,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Golden Caramel Drip Cake</h4>
 <div class="price">₹480</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 124 -->
@@ -1108,6 +1249,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Half Chocolate Designer Cake</h4>
 <div class="price">₹500</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 125 -->
@@ -1116,6 +1258,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Vanilla Crunch Designer Cake</h4>
 <div class="price">₹420</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 126 -->
@@ -1124,6 +1267,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Golden Pineapple Cream Cake</h4>
 <div class="price">₹450</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 127 -->
@@ -1132,6 +1276,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Pineapple Designer Ring Cake</h4>
 <div class="price">₹480</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 128 -->
@@ -1140,6 +1285,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Butterscotch Crunch Premium Cake</h4>
 <div class="price">₹460</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 129 -->
@@ -1148,6 +1294,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>White Cream Birthday Cake</h4>
 <div class="price">₹420</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 130 -->
@@ -1156,6 +1303,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Marble Designer Cake</h4>
 <div class="price">₹480</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 131 -->
@@ -1164,6 +1312,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Classic Celebration Cream Cake</h4>
 <div class="price">₹420</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 133 -->
@@ -1172,6 +1321,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Butterscotch Designer Party Cake</h4>
 <div class="price">₹480</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 
@@ -1181,6 +1331,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Ribbon Birthday Cake</h4>
 <div class="price">₹460</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 137 -->
@@ -1189,6 +1340,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Hazelnut Chocolate Mirror Cake</h4>
 <div class="price">₹620</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 138 -->
@@ -1197,6 +1349,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Dark Chocolate Gloss Finish Cake</h4>
 <div class="price">₹580</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 139 -->
@@ -1205,6 +1358,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Half Chocolate Vanilla Drip Cake</h4>
 <div class="price">₹520</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 140 -->
@@ -1213,6 +1367,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Classic Chocolate Celebration Cake</h4>
 <div class="price">₹440</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 141 -->
@@ -1221,6 +1376,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Oreo Chocolate Drip Cream Cake</h4>
 <div class="price">₹480</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 142 -->
@@ -1229,6 +1385,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Ferrero Rocher Mousse Cake</h4>
 <div class="price">₹650</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 143 -->
@@ -1237,6 +1394,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Crumb Layer Cake</h4>
 <div class="price">₹460</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 144 -->
@@ -1245,6 +1403,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Vanilla Drip Premium Cake</h4>
 <div class="price">₹520</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 145 -->
@@ -1253,6 +1412,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Smooth Finish Cake</h4>
 <div class="price">₹500</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 147 -->
@@ -1261,6 +1421,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>White Chocolate Chip Crunch Cake</h4>
 <div class="price">₹460</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 148 -->
@@ -1269,6 +1430,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Almond Crunch Premium Cake</h4>
 <div class="price">₹520</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 149 -->
@@ -1277,6 +1439,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Spiral Designer Cake</h4>
 <div class="price">₹500</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 150 -->
@@ -1285,6 +1448,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Mango Glaze Designer Cake</h4>
 <div class="price">₹520</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 151 -->
@@ -1293,6 +1457,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Butterscotch Crunch Cream Cake</h4>
 <div class="price">₹460</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 152 -->
@@ -1301,6 +1466,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>KitKat Oreo Chocolate Loaded Cake</h4>
 <div class="price">₹650</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 153 -->
@@ -1309,6 +1475,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Caramel Gloss Designer Cake</h4>
 <div class="price">₹500</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 154 -->
@@ -1317,6 +1484,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Birthday Drip Cake</h4>
 <div class="price">₹480</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 155 -->
@@ -1325,6 +1493,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>White Forest Almond Cream Cake</h4>
 <div class="price">₹520</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <!-- PRODUCT 157 -->
@@ -1333,6 +1502,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Hazelnut Chocolate Grid Cake</h4>
 <div class="price">₹560</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 
@@ -1347,6 +1517,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Fresh Fruit Premium Glaze Cake</h4>
 <div class="price">₹550</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1354,6 +1525,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Blueberry Cream Designer Cake</h4>
 <div class="price">₹520</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1361,6 +1533,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Caramel Cherry Crunch Cake</h4>
 <div class="price">₹500</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1368,6 +1541,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Red Velvet Heart Special Cake</h4>
 <div class="price">₹580</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1375,6 +1549,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Classic Red Velvet Cream Cake</h4>
 <div class="price">₹550</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1382,6 +1557,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Fruit Basket Celebration Cake</h4>
 <div class="price">₹600</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1389,6 +1565,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Mixed Fruit Crunch Designer Cake</h4>
 <div class="price">₹649</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1396,6 +1573,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Caramel Heart Top Cake</h4>
 <div class="price">₹499</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1403,6 +1581,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Mocha Cream Designer Cake</h4>
 <div class="price">₹450</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1410,6 +1589,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>KitKat Ring Chocolate Cake</h4>
 <div class="price">₹699</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1417,6 +1597,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Kitkat Crunch Cake</h4>
 <div class="price">₹520</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1424,6 +1605,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Drip Premium Cake</h4>
 <div class="price">₹499</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1431,6 +1613,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Lotus Biscoff Cream Cake</h4>
 <div class="price">₹650</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 
@@ -1443,6 +1626,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Saffron Delight Cake</h4>
 <div class="price">₹549</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1450,6 +1634,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Pistachio Crunch Cake</h4>
 <div class="price">₹579</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1457,6 +1642,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>White Chocolate Dream Cake</h4>
 <div class="price">₹429</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1464,6 +1650,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Lotus Biscoff Cream Cake</h4>
 <div class="price">₹649</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1471,6 +1658,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Royal Chocolate Cherry Cake</h4>
 <div class="price">₹429</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1478,6 +1666,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Chip Loaded Cake</h4>
 <div class="price">₹479</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1485,6 +1674,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Silky Chocolate Glaze Cake</h4>
 <div class="price">₹529</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1492,6 +1682,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Choco Cream Crunch Cake</h4>
 <div class="price">₹599</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1499,6 +1690,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Dark Fantasy Drip Cake</h4>
 <div class="price">₹459</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1506,6 +1698,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Hazelnut Choco Nut Cake</h4>
 <div class="price">₹649</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1513,6 +1706,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Rose Heart Cake</h4>
 <div class="price">₹489</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1520,6 +1714,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Ferrero Rocher Chocolate Cake</h4>
 <div class="price">₹749</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1527,6 +1722,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Sprinkle Delight Cake</h4>
 <div class="price">₹439</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1534,6 +1730,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Classic Chocolate Ring Cake</h4>
 <div class="price">₹440</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1541,6 +1738,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Pistachio Chocolate Luxury Cake</h4>
 <div class="price">₹459</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1548,6 +1746,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Marble Layer Cake</h4>
 <div class="price">₹439</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1555,6 +1754,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Dark Chocolate Truffle Celebration Cake</h4>
 <div class="price">₹549</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1562,6 +1762,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Red Velvet Classic Cake</h4>
 <div class="price">₹549</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1569,6 +1770,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Ferrero Drip Chocolate Cake</h4>
 <div class="price">₹799</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
   
@@ -1577,6 +1779,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Chocolate Glaze Premium Cake</h4>
 <div class="price">₹430</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1584,6 +1787,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Pineapple Citrus Designer Cake</h4>
 <div class="price">₹549</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
@@ -1591,6 +1795,7 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 <h4>Pineapple Classic Cream Cake</h4>
 <div class="price">₹420</div>
 <div class="subtitle">500gm</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 </div>
@@ -1611,29 +1816,6 @@ document.addEventListener('keydown', function(e){
   if(e.key === 'F12') e.preventDefault();
 });
 
-// Add copyright text watermark automatically
-window.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.card').forEach(card => {
-    const wm = document.createElement('div');
-    wm.innerText = 'Aadesh Bakery • Jivraj Park';
-    wm.style.position = 'absolute';
-    wm.style.top = '50%';
-    wm.style.left = '50%';
-    wm.style.transform = 'translate(-50%, -50%) rotate(-15deg)';
-    wm.style.fontSize = '14px';
-    wm.style.letterSpacing = '2px';
-    wm.style.fontWeight = '600';
-    wm.style.color = 'rgba(43,26,18,0.25)';
-    wm.style.textTransform = 'uppercase';
-    wm.style.pointerEvents = 'none';
-    wm.style.whiteSpace = 'nowrap';
-    wm.style.border = '1px solid rgba(43,26,18,0.15)';
-    wm.style.padding = '6px 14px';
-    wm.style.borderRadius = '20px';
-    
-    card.appendChild(wm);
-  });
-});
 
 // UPDATE IDS
 function updateIDs(category='all'){
@@ -1700,7 +1882,19 @@ function filterCake(category, btn){
 // INITIAL LOAD IDS
 window.addEventListener('DOMContentLoaded', () => {
   updateIDs('all');
+
+  // add watermark overlay on each card (always visible over image)
+  document.querySelectorAll('.card').forEach(card => {
+    if(!card.querySelector('.wm-overlay')){
+      const wm = document.createElement('div');
+      wm.className = 'wm-overlay';
+      wm.innerHTML = '<span>Aadesh Bakery • Jivraj Park</span>';
+      card.appendChild(wm);
+    }
+  });
 });
+
+
 </script>
 
 </body>
