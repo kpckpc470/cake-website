@@ -17,6 +17,27 @@ nav a:hover{background:#fff;color:#ff6b6b}
 .container{max-width:1400px;margin:auto;padding:30px 18px}
 h2{text-align:center;margin-bottom:25px;font-weight:600}
 
+.filter-btn{
+  border:none;
+  background:#eee;
+  padding:8px 14px;
+  margin:4px;
+  border-radius:20px;
+  cursor:pointer;
+  font-size:13px;
+  transition:.3s;
+}
+
+.filter-btn:hover{
+  background:#ff6b6b;
+  color:#fff;
+}
+
+.filter-btn.active{
+  background:#ff6b6b;
+  color:#fff;
+}
+
 .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;counter-reset:cake}
 
 .card{background:#fff;border-radius:16px;padding:12px;box-shadow:0 6px 20px rgba(0,0,0,.05);transition:.3s;counter-increment:cake}
@@ -89,6 +110,29 @@ h2{text-align:center;margin-bottom:25px;font-weight:600}
 
 <div class="container">
 <h2>Regular Cakes</h2>
+
+<!-- SORT OPTION -->
+<div style="text-align:right;margin-bottom:10px;">
+  <select onchange="sortCakes(this.value)" style="padding:6px 10px;border-radius:6px;border:1px solid #ccc;">
+    <option value="default">Sort</option>
+    <option value="low">Price: Low to High</option>
+  </select>
+</div>
+
+<!-- CATEGORY FILTER -->
+<div style="text-align:center;margin-bottom:20px;" id="filterBtns">
+  <button class="filter-btn active" onclick="filterCake('all', this)">All</button>
+  <button class="filter-btn" onclick="filterCake('chocolate', this)">Chocolate</button>
+  <button class="filter-btn" onclick="filterCake('blueberry', this)">Blueberry</button>
+  <button class="filter-btn" onclick="filterCake('mango', this)">Mango</button>
+  <button class="filter-btn" onclick="filterCake('caramel', this)">Caramel</button>
+  <button class="filter-btn" onclick="filterCake('butterscotch', this)">Butterscotch</button>
+  <button class="filter-btn" onclick="filterCake('fruit', this)">Mix Fruit</button>
+  <button class="filter-btn" onclick="filterCake('white forest', this)">White Forest</button>
+  <button class="filter-btn" onclick="filterCake('black forest', this)">Black Forest</button>
+  <button class="filter-btn" onclick="filterCake('strawberry', this)">Strawberry</button>
+  <button class="filter-btn" onclick="filterCake('pineapple', this)">Pineapple</button>
+</div>
 
 <div class="products">
 
@@ -1561,6 +1605,51 @@ document.querySelectorAll('.card').forEach(card => {
   wm.style.pointerEvents = 'none';
   card.appendChild(wm);
 });
+
+
+// SORT FUNCTION
+function sortCakes(type){
+  const container = document.querySelector('.products');
+  const cards = Array.from(container.querySelectorAll('.card'));
+
+  if(type === 'low'){
+    cards.sort((a, b) => {
+      const priceA = parseInt(a.querySelector('.price').innerText.replace('₹',''));
+      const priceB = parseInt(b.querySelector('.price').innerText.replace('₹',''));
+      return priceA - priceB;
+    });
+  }
+
+  // re-append sorted
+  cards.forEach(card => container.appendChild(card));
+}
+
+
+// CATEGORY FILTER
+function filterCake(category, btn){
+  const cards = document.querySelectorAll('.card');
+
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+
+  cards.forEach(card => {
+    const name = card.querySelector('h4').innerText.toLowerCase();
+
+    if(category === 'all'){
+      card.style.display = 'block';
+    }
+    else if(category === 'fruit' && (name.includes('fruit') || name.includes('mix') || name.includes('basket'))){
+      card.style.display = 'block';
+    }
+    else if(name.includes(category)){
+      card.style.display = 'block';
+    }
+    else{
+      card.style.display = 'none';
+    }
+  });
+}
+
 </script>
 
 </body>
