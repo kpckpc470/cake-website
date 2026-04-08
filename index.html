@@ -10,10 +10,56 @@
 body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:#ffffff;color:#1a1a1a;-webkit-font-smoothing:antialiased}
 
 /* NAV - LUXURY */
-nav{position:sticky;top:0;background:linear-gradient(135deg,#1a0f0a,#2b1a12);padding:14px;z-index:1000;box-shadow:0 6px 25px rgba(0,0,0,.3)}
+nav{position:sticky;top:0;background:linear-gradient(135deg,#1a0f0a,#2b1a12);padding:14px;z-index:1000;box-shadow:0 6px 25px rgba(0,0,0,.3);overflow:hidden}
+
+/* subtle gold shine line */
+nav::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:2px;
+  background:linear-gradient(90deg,transparent,#d4af37,transparent);
+  opacity:.7;
+}
+
 nav .links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-nav a{color:#fff;text-decoration:none;font-size:13px;padding:8px 16px;border-radius:999px;transition:.3s;letter-spacing:.5px}
-nav a:hover{background:#ffffff;color:#2b1a12;transform:translateY(-3px);box-shadow:0 6px 15px rgba(0,0,0,.2)}
+
+nav a{
+  color:#fff;
+  text-decoration:none;
+  font-size:13px;
+  padding:8px 16px;
+  border-radius:999px;
+  transition:.3s;
+  letter-spacing:.5px;
+  position:relative;
+}
+
+/* underline animation */
+nav a::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:4px;
+  width:0%;
+  height:2px;
+  background:#d4af37;
+  transition:.3s;
+  transform:translateX(-50%);
+}
+
+nav a:hover::after{
+  width:60%;
+}
+
+nav a:hover{
+  background:#ffffff;
+  color:#2b1a12;
+  transform:translateY(-3px);
+  box-shadow:0 6px 15px rgba(0,0,0,.2);
+}
 
 .container{max-width:1400px;margin:auto;padding:30px 18px}
 h2{text-align:center;margin-bottom:20px;font-weight:800;letter-spacing:1px}
@@ -31,34 +77,47 @@ select:hover{box-shadow:0 8px 22px rgba(0,0,0,.15)}
 .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
 
 /* CARD - PREMIUM */
-.card{background:#fff;border-radius:20px;padding:12px;box-shadow:0 10px 40px rgba(0,0,0,.08);transition:.4s ease;position:relative;overflow:hidden}
-.card:hover{transform:translateY(-12px) scale(1.02);box-shadow:0 25px 60px rgba(0,0,0,.18)}
+.card{background:#fff;border-radius:18px;padding:14px;box-shadow:0 6px 24px rgba(0,0,0,.06);transition:.35s ease;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between}
+.card:hover{transform:translateY(-8px);box-shadow:0 16px 40px rgba(0,0,0,.12)}
 
-.card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:16px;transition:transform .6s ease;-webkit-user-drag:none;user-select:none}
-.card:hover img{transform:scale(1.15) rotate(.5deg)}
+.card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px;transition:transform .4s ease;-webkit-user-drag:none;user-select:none}
+.card:hover img{transform:scale(1.08)}
 
-/* GOLD SHINE */
-.card::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent,rgba(212,175,55,.2),transparent);opacity:0;transition:.6s}
+/* CLEAN HOVER OVERLAY */
+.card::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,0.03);opacity:0;transition:.4s}
 .card:hover::after{opacity:1}
 
 /* BADGE */
 .card::before{content:attr(data-id);position:absolute;top:10px;left:10px;background:linear-gradient(135deg,#2b1a12,#000);color:#fff;font-size:11px;font-weight:700;padding:5px 12px;border-radius:999px;z-index:2;box-shadow:0 6px 14px rgba(0,0,0,.3)}
 
-/* TEXT */
-.card h4{margin:12px 0 6px;font-size:15px;font-weight:700;line-height:1.4}
-.price{font-weight:800;color:#2b1a12;font-size:17px}
-.subtitle{font-size:12px;color:#777}
-
-/* HOVER LINE */
-.card h4::after{
-  content:"";
-  display:block;
-  width:0%;
-  height:2px;
-  background:#2b1a12;
-  transition:.4s;
-  margin-top:4px;
+/* TEXT - PREMIUM LOOK */
+.card h4{
+  margin:10px 0 6px;
+  font-size:15px;
+  font-weight:700;
+  line-height:1.4;
+  color:#1a1a1a;
+  letter-spacing:.3px;
 }
+
+.price{
+  font-weight:800;
+  color:#2b1a12;
+  font-size:18px;
+  margin-bottom:2px;
+}
+
+.subtitle{
+  font-size:12px;
+  color:#666;
+  background:#f5f5f5;
+  display:inline-block;
+  padding:3px 8px;
+  border-radius:6px;
+  font-weight:500;
+}
+
+
 .card:hover h4::after{width:60%}
 
 /* MOBILE */
@@ -1556,17 +1615,22 @@ document.addEventListener('keydown', function(e){
 window.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.card').forEach(card => {
     const wm = document.createElement('div');
-    wm.innerText = 'AADESH BAKERY (JIVRAJ PARK)';
+    wm.innerText = 'Aadesh Bakery • Jivraj Park';
     wm.style.position = 'absolute';
-    wm.style.bottom = '8px';
+    wm.style.top = '50%';
     wm.style.left = '50%';
-    wm.style.transform = 'translateX(-50%)';
-    wm.style.fontSize = '10px';
-    wm.style.background = 'rgba(0,0,0,0.6)';
-    wm.style.color = '#fff';
-    wm.style.padding = '2px 6px';
-    wm.style.borderRadius = '8px';
+    wm.style.transform = 'translate(-50%, -50%) rotate(-15deg)';
+    wm.style.fontSize = '14px';
+    wm.style.letterSpacing = '2px';
+    wm.style.fontWeight = '600';
+    wm.style.color = 'rgba(43,26,18,0.25)';
+    wm.style.textTransform = 'uppercase';
     wm.style.pointerEvents = 'none';
+    wm.style.whiteSpace = 'nowrap';
+    wm.style.border = '1px solid rgba(43,26,18,0.15)';
+    wm.style.padding = '6px 14px';
+    wm.style.borderRadius = '20px';
+    wm.style.backdropFilter = 'blur(2px)';
     card.appendChild(wm);
   });
 });
