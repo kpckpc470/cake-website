@@ -6,24 +6,136 @@
 <title>Wedding Cakes</title>
 
 <style>
-/* SAME CSS AS REGULAR.HTML (no change) */
 *{box-sizing:border-box}
-body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:#ffffff;color:#1a1a1a}
 
-nav{position:sticky;top:0;background:linear-gradient(135deg,#1a0f0a,#2b1a12);padding:14px;z-index:1000}
-nav .links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-nav a{color:#fff;text-decoration:none;font-size:13px;padding:8px 16px;border-radius:999px}
+body{
+  margin:0;
+  font-family:'Segoe UI',Arial,sans-serif;
+  background:#ffffff;
+  color:#1a1a1a;
+}
 
-.container{max-width:1400px;margin:auto;padding:30px 18px}
-h2{text-align:center;margin-bottom:20px}
+/* NAV */
+nav{
+  position:sticky;
+  top:0;
+  background:linear-gradient(135deg,#1a0f0a,#2b1a12);
+  padding:14px;
+  z-index:1000;
+}
 
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+nav .links{
+  display:flex;
+  gap:14px;
+  justify-content:center;
+}
 
-.card{background:#fff;border-radius:18px;padding:14px;box-shadow:0 6px 24px rgba(0,0,0,.06)}
-.card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px}
+nav a{
+  color:#fff;
+  text-decoration:none;
+  font-size:13px;
+  padding:8px 16px;
+  border-radius:999px;
+}
 
-.price{font-weight:800;color:#2b1a12;font-size:18px}
-.subtitle{font-size:12px;color:#666}
+nav a:hover{
+  background:#fff;
+  color:#2b1a12;
+}
+
+/* CONTAINER */
+.container{
+  max-width:1400px;
+  margin:auto;
+  padding:30px 18px;
+}
+
+h2{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+/* FILTER BUTTON */
+.filter-btn{
+  border:none;
+  background:#f3f3f3;
+  padding:9px 18px;
+  margin:5px;
+  border-radius:999px;
+  cursor:pointer;
+  font-size:13px;
+  font-weight:600;
+}
+
+.filter-btn.active,
+.filter-btn:hover{
+  background:#2b1a12;
+  color:#fff;
+}
+
+/* GRID */
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+
+/* CARD */
+.card{
+  background:#fff;
+  border-radius:16px;
+  padding:12px;
+  box-shadow:0 6px 20px rgba(0,0,0,.08);
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+}
+
+.card img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+/* TEXT */
+.card h4{
+  margin:10px 0 5px;
+  font-size:15px;
+}
+
+/* PRICE */
+.price{
+  font-size:22px;
+  font-weight:800;
+  margin:6px 0;
+}
+
+/* WEIGHT BOX */
+.weight-box{
+  background:#f2f2f2;
+  padding:8px 12px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:600;
+  color:#555;
+  margin-bottom:6px;
+}
+
+/* LOCATION */
+.location{
+  font-size:12px;
+  color:#888;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .products{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
 </style>
 </head>
 
@@ -33,63 +145,77 @@ h2{text-align:center;margin-bottom:20px}
   <div class="links">
     <a href="index.html">Home</a>
     <a href="regular.html">Regular</a>
-    <a href="wedding.html">Wedding</a>
+    <a href="designer.html">Designer</a>
   </div>
 </nav>
 
 <div class="container">
-<h2>Wedding Cakes</h2>
+<h2>Regular Cakes</h2>
 
-<!-- FILTER (UPDATED FOR WEDDING) -->
+<!-- FILTER -->
 <div style="text-align:center;margin-bottom:20px;">
-  <button onclick="filterCake('all')">All</button>
-  <button onclick="filterCake('tier')">Tier Cakes</button>
-  <button onclick="filterCake('floral')">Floral</button>
-  <button onclick="filterCake('royal')">Royal</button>
-  <button onclick="filterCake('classic')">Classic</button>
+  <button class="filter-btn active" onclick="filterCake('all', this)">All</button>
+  <button class="filter-btn" onclick="filterCake('chocolate', this)">Chocolate</button>
+  <button class="filter-btn" onclick="filterCake('fruit', this)">Fruit</button>
 </div>
 
 <div class="products">
 
-<!-- SAMPLE WEDDING PRODUCTS -->
+<!-- SAMPLE PRODUCTS (Add rest same way) -->
+
 <div class="card">
-<img src="images/w1.jpg">
-<h4>Royal White Tier Wedding Cake</h4>
-<div class="price">₹3500</div>
-<div class="subtitle">3 Tier</div>
+  <img src="images/cake1.jpg">
+  <h4>Kiwi Strawberry Glaze Cake</h4>
+  <div class="price">₹400</div>
+  <div class="weight-box">500gm</div>
+  <div class="location">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
-<img src="images/w2.jpg">
-<h4>Floral Pink Wedding Cake</h4>
-<div class="price">₹3200</div>
-<div class="subtitle">2 Tier</div>
+  <img src="images/cake2.jpg">
+  <h4>Caramel Almond Crunch Cake</h4>
+  <div class="price">₹430</div>
+  <div class="weight-box">500gm</div>
+  <div class="location">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 <div class="card">
-<img src="images/w3.jpg">
-<h4>Golden Royal Designer Cake</h4>
-<div class="price">₹5000</div>
-<div class="subtitle">3 Tier</div>
+  <img src="images/cake3.jpg">
+  <h4>White Chocolate Marble Cake</h4>
+  <div class="price">₹420</div>
+  <div class="weight-box">500gm</div>
+  <div class="location">Aadesh Bakery • Jivraj Park</div>
 </div>
 
 </div>
 </div>
 
 <script>
-function filterCake(category){
+
+/* FILTER FUNCTION */
+function filterCake(category, btn){
   const cards = document.querySelectorAll('.card');
 
-  cards.forEach(card=>{
-    const name = card.innerText.toLowerCase();
+  document.querySelectorAll('.filter-btn')
+    .forEach(b => b.classList.remove('active'));
 
-    if(category === 'all' || name.includes(category)){
+  btn.classList.add('active');
+
+  cards.forEach(card => {
+    const name = card.querySelector('h4').innerText.toLowerCase();
+
+    if(category === 'all'){
       card.style.display = 'block';
-    } else {
+    }
+    else if(name.includes(category)){
+      card.style.display = 'block';
+    }
+    else{
       card.style.display = 'none';
     }
   });
 }
+
 </script>
 
 </body>
