@@ -72,7 +72,7 @@ select{flex:1;padding:6px;border-radius:6px}
 <!-- NORMAL CAKE -->
 <div class="card" data-id="MY-001">
 <img src="images/mycake1.jpg">
-<h4>Hug & Love Cake</h4>
+<h4>Custom Birthday Cake</h4>
 
 <div class="price">₹<span class="price-value">1000</span></div>
 
@@ -86,16 +86,7 @@ select{flex:1;padding:6px;border-radius:6px}
 <option value="3">3kg</option>
 </select>
 
-<select class="flavour">
-<option>Black Forest</option>
-<option>Chocolate</option>
-<option>Pineapple</option>
-<option>Strawberry</option>
-<option>Red Velvet</option>
-<option>Mango</option>
-<option>Butterscotch</option>
-<option>Blueberry</option>
-</select>
+<select class="flavour"></select>
 </div>
 </div>
 
@@ -113,16 +104,7 @@ select{flex:1;padding:6px;border-radius:6px}
 <option value="3">3kg</option>
 </select>
 
-<select class="flavour">
-<option>Black Forest</option>
-<option>Chocolate</option>
-<option>Pineapple</option>
-<option>Strawberry</option>
-<option>Red Velvet</option>
-<option>Mango</option>
-<option>Butterscotch</option>
-<option>Blueberry</option>
-</select>
+<select class="flavour"></select>
 </div>
 </div>
 
@@ -131,18 +113,42 @@ select{flex:1;padding:6px;border-radius:6px}
 
 <script>
 
+// FLAVOUR LIST (single source)
+const flavourList = [
+"Pineapple","Strawberry","Mango","Orange","White Forest","Black Forest",
+"Black Current","Classic Black Forest","Raspberry","Mix Fruit","Blueberry",
+"German Forest","Kiwi Strawberry","Choco-Vanilla","Caramal","Butterscotch",
+"Belgium Chocolate","Choco-Oreo","Tiramisu","Choco-Delight","Choco-Chips",
+"Coffee","Choco-Mousse","Dark-Mousse","Choco-Duet Mousse","Green Apple",
+"Chocolate Praline","Rose Pista","Kesar Badam","Choco-Orange","Milk-Choco",
+"Hazelnut","Choco-Ball","Ferrero Rocher","KitKat & Jems","Rasmalai",
+"Choco-Caramal","Choco-Almond","Red Velvet","Choco-Fudge","Dutch Truffle",
+"German Chocolate"
+];
+
 // BASE PRICES
 const basePrices = {
-  "Black Forest": 800,
-  "Chocolate": 820,
-  "Pineapple": 780,
-  "Strawberry": 800,
-  "Red Velvet": 900,
-  "Mango": 850,
-  "Butterscotch": 950,
-  "Blueberry": 950
+"Pineapple":800,"Strawberry":800,"Mango":800,"Orange":840,"White Forest":820,"Black Forest":820,
+"Black Current":760,"Classic Black Forest":860,"Raspberry":900,"Mix Fruit":840,"Blueberry":820,
+"German Forest":840,"Kiwi Strawberry":800,"Choco-Vanilla":820,"Caramal":850,"Butterscotch":830,
+"Belgium Chocolate":1200,"Choco-Oreo":920,"Tiramisu":920,"Choco-Delight":870,"Choco-Chips":850,
+"Coffee":900,"Choco-Mousse":850,"Dark-Mousse":850,"Choco-Duet Mousse":860,"Green Apple":800,
+"Chocolate Praline":880,"Rose Pista":860,"Kesar Badam":860,"Choco-Orange":880,"Milk-Choco":880,
+"Hazelnut":940,"Choco-Ball":900,"Ferrero Rocher":1200,"KitKat & Jems":1100,"Rasmalai":900,
+"Choco-Caramal":920,"Choco-Almond":880,"Red Velvet":950,"Choco-Fudge":920,"Dutch Truffle":950,
+"German Chocolate":850
 };
 
+// INSERT FLAVOURS INTO ALL DROPDOWNS
+document.querySelectorAll('.flavour').forEach(select => {
+  flavourList.forEach(f => {
+    const opt = document.createElement('option');
+    opt.textContent = f;
+    select.appendChild(opt);
+  });
+});
+
+// PRICING LOGIC
 document.querySelectorAll('.card').forEach(card => {
 
   const baseCakePrice = parseInt(card.querySelector('.price-value').innerText);
@@ -163,24 +169,12 @@ document.querySelectorAll('.card').forEach(card => {
 
     let finalPrice;
 
-    if(weight === 0.5){
-      finalPrice = (flavourPrice / 2) + 50;
-    }
-    else if(weight === 1){
-      finalPrice = flavourPrice;
-    }
-    else if(weight === 1.5){
-      finalPrice = flavourPrice * 1.5;
-    }
-    else if(weight === 2){
-      finalPrice = (flavourPrice * 2) - 100;
-    }
-    else if(weight === 2.5){
-      finalPrice = (flavourPrice * 2.5) - 100;
-    }
-    else if(weight === 3){
-      finalPrice = (flavourPrice * 3) - 100;
-    }
+    if(weight === 0.5){ finalPrice = (flavourPrice / 2) + 50; }
+    else if(weight === 1){ finalPrice = flavourPrice; }
+    else if(weight === 1.5){ finalPrice = flavourPrice * 1.5; }
+    else if(weight === 2){ finalPrice = (flavourPrice * 2) - 100; }
+    else if(weight === 2.5){ finalPrice = (flavourPrice * 2.5) - 100; }
+    else if(weight === 3){ finalPrice = (flavourPrice * 3) - 100; }
 
     priceText.innerText = Math.round(finalPrice);
   }
@@ -188,9 +182,7 @@ document.querySelectorAll('.card').forEach(card => {
   weightSelect.addEventListener('change', updatePrice);
   flavourSelect.addEventListener('change', updatePrice);
 
-  // ✅ THIS LINE MAKES DEFAULT PRICE MINIMUM
-  updatePrice();
-
+  updatePrice(); // default minimum
 });
 
 // WATERMARK
