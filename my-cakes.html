@@ -16,7 +16,6 @@ nav{
   background:linear-gradient(135deg,#1a0f0a,#2b1a12);
   padding:14px;
   z-index:1000;
-  box-shadow:0 6px 25px rgba(0,0,0,.3);
 }
 nav .links{
   display:flex;
@@ -42,11 +41,7 @@ nav a:hover{
   margin:auto;
   padding:30px 18px;
 }
-h2{
-  text-align:center;
-  margin-bottom:25px;
-  font-weight:800;
-}
+h2{text-align:center;margin-bottom:25px}
 
 /* GRID */
 .products{
@@ -61,13 +56,8 @@ h2{
   border-radius:18px;
   padding:14px;
   box-shadow:0 6px 24px rgba(0,0,0,.06);
-  transition:.35s;
   position:relative;
   overflow:hidden;
-}
-.card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 16px 40px rgba(0,0,0,.12);
 }
 .card img{
   width:100%;
@@ -91,7 +81,7 @@ h2{
 
 /* TEXT */
 .card h4{margin:10px 0 6px;font-size:15px}
-.price{font-weight:800;color:#2b1a12}
+.price{font-weight:800;color:#2b1a12;font-size:18px}
 
 /* OPTIONS */
 .options-row{
@@ -101,13 +91,9 @@ h2{
 }
 .select-box{
   flex:1;
-  padding:6px 10px;
+  padding:6px;
   border-radius:8px;
   border:1px solid #eee;
-  background:#fff;
-  font-size:12px;
-  font-weight:600;
-  box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
 
 /* WATERMARK */
@@ -124,145 +110,127 @@ h2{
   color:rgba(0,0,0,0.15);
   transform:rotate(-18deg);
 }
-
-/* MOBILE */
-@media(max-width:600px){
-  .products{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:400px){
-  .products{grid-template-columns:1fr}
-}
 </style>
 </head>
 
 <body>
 
 <nav>
-  <div class="links">
-    <a href="index.html">Home</a>
-    <a href="regular.html">Regular</a>
-    <a href="designer.html">Designer</a>
-    <a href="wedding.html">Wedding</a>
-    <a href="my-cakes.html">My Cakes</a>
-  </div>
+<div class="links">
+<a href="index.html">Home</a>
+<a href="regular.html">Regular</a>
+<a href="designer.html">Designer</a>
+<a href="wedding.html">Wedding</a>
+<a href="my-cakes.html">My Cakes</a>
+</div>
 </nav>
 
 <div class="container">
-  <h2>My Cakes</h2>
+<h2>My Cakes</h2>
 
-  <div class="products">
+<div class="products">
 
-    <!-- PRODUCT 1 -->
-    <div class="card" data-id="MY-001">
-      <img src="images/mycake1.jpg">
-      <h4>Custom Birthday Cake</h4>
-      <div class="price">₹600 (1kg)</div>
+<!-- PRODUCT -->
+<div class="card" data-id="MY-001">
+<img src="images/mycake1.jpg">
+<h4>Custom Birthday Cake</h4>
 
-      <div class="options-row">
-        <select class="select-box">
-          <option>1kg</option>
-          <option>1.5kg</option>
-          <option>2kg</option>
-          <option>2.5kg</option>
-          <option>3kg</option>
-        </select>
+<div class="price">₹<span class="price-value">1000</span></div>
 
-        <select class="select-box">
-          <option>Chocolate</option>
-          <option>Black Forest</option>
-          <option>Butterscotch</option>
-          <option>Strawberry</option>
-          <option>Pineapple</option>
-          <option>Red Velvet</option>
-          <option>Blueberry</option>
-          <option>Mango</option>
-        </select>
-      </div>
+<div class="options-row">
+<select class="select-box weight">
+<option value="1">1kg</option>
+<option value="1.5">1.5kg</option>
+<option value="2">2kg</option>
+<option value="2.5">2.5kg</option>
+<option value="3">3kg</option>
+</select>
 
-      <div style="font-size:11px;color:#999;margin-top:4px;">
-        Aadesh Bakery • Jivraj Park
-      </div>
-    </div>
+<select class="select-box flavour">
+<option>Black Forest</option>
+<option>Chocolate</option>
+<option>Pineapple</option>
+<option>Strawberry</option>
+<option>Red Velvet</option>
+<option>Mango</option>
+<option>Butterscotch</option>
+<option>Blueberry</option>
+</select>
+</div>
 
-    <!-- PRODUCT 2 -->
-    <div class="card" data-id="MY-002">
-      <img src="images/mycake2.jpg">
-      <h4>Photo Printed Cake</h4>
-      <div class="price">₹750 (1kg)</div>
+<div style="font-size:11px;color:#999;margin-top:4px;">
+Aadesh Bakery • Jivraj Park
+</div>
+</div>
 
-      <div class="options-row">
-        <select class="select-box">
-          <option>1kg</option>
-          <option>1.5kg</option>
-          <option>2kg</option>
-          <option>2.5kg</option>
-          <option>3kg</option>
-        </select>
-
-        <select class="select-box">
-          <option>Chocolate</option>
-          <option>Black Forest</option>
-          <option>Butterscotch</option>
-          <option>Strawberry</option>
-          <option>Pineapple</option>
-          <option>Red Velvet</option>
-          <option>Blueberry</option>
-          <option>Mango</option>
-        </select>
-      </div>
-
-      <div style="font-size:11px;color:#999;margin-top:4px;">
-        Aadesh Bakery • Jivraj Park
-      </div>
-    </div>
-
-    <!-- PRODUCT 3 -->
-    <div class="card" data-id="MY-003">
-      <img src="images/mycake3.jpg">
-      <h4>Theme Designer Cake</h4>
-      <div class="price">₹1200 (1kg)</div>
-
-      <div class="options-row">
-        <select class="select-box">
-          <option>1kg</option>
-          <option>1.5kg</option>
-          <option>2kg</option>
-          <option>2.5kg</option>
-          <option>3kg</option>
-        </select>
-
-        <select class="select-box">
-          <option>Chocolate</option>
-          <option>Black Forest</option>
-          <option>Butterscotch</option>
-          <option>Strawberry</option>
-          <option>Pineapple</option>
-          <option>Red Velvet</option>
-          <option>Blueberry</option>
-          <option>Mango</option>
-        </select>
-      </div>
-
-      <div style="font-size:11px;color:#999;margin-top:4px;">
-        Aadesh Bakery • Jivraj Park
-      </div>
-    </div>
-
-  </div>
+</div>
 </div>
 
 <script>
-// WATERMARK AUTO ADD
+
+// BASE PRICES
+const basePrices = {
+  "Black Forest": 800,
+  "Chocolate": 820,
+  "Pineapple": 780,
+  "Strawberry": 800,
+  "Red Velvet": 900,
+  "Mango": 850,
+  "Butterscotch": 950,
+  "Blueberry": 950
+};
+
+document.querySelectorAll('.card').forEach(card => {
+
+  const baseCakePrice = parseInt(card.querySelector('.price-value').innerText);
+  const weightSelect = card.querySelector('.weight');
+  const flavourSelect = card.querySelector('.flavour');
+  const priceText = card.querySelector('.price-value');
+
+  function updatePrice(){
+
+    const flavour = flavourSelect.value;
+    const weight = parseFloat(weightSelect.value);
+
+    const diff = baseCakePrice - basePrices["Black Forest"];
+    let flavourPrice = basePrices[flavour] + diff;
+
+    let finalPrice;
+
+    if(weight === 1){
+      finalPrice = flavourPrice;
+    }
+    else if(weight === 1.5){
+      finalPrice = flavourPrice * 1.5;
+    }
+    else if(weight === 2){
+      finalPrice = (flavourPrice * 2) - 100;
+    }
+    else if(weight === 2.5){
+      finalPrice = (flavourPrice * 2.5) - 100;
+    }
+    else if(weight === 3){
+      finalPrice = (flavourPrice * 3) - 100;
+    }
+
+    priceText.innerText = Math.round(finalPrice);
+  }
+
+  weightSelect.addEventListener('change', updatePrice);
+  flavourSelect.addEventListener('change', updatePrice);
+
+});
+
+// WATERMARK
 window.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.card').forEach(card => {
-    if(!card.querySelector('.wm-overlay')){
-      const wm = document.createElement('div');
-      wm.className = 'wm-overlay';
-      wm.innerHTML = '<span>Aadesh Bakery • Jivraj Park</span>';
-      card.appendChild(wm);
-    }
+    const wm = document.createElement('div');
+    wm.className = 'wm-overlay';
+    wm.innerHTML = '<span>Aadesh Bakery • Jivraj Park</span>';
+    card.appendChild(wm);
   });
 });
+
 </script>
 
 </body>
