@@ -33,11 +33,11 @@ nav a:hover{background:#fff;color:#2b1a12}
 }
 
 /* TEXT */
-.price{font-weight:bold;color:#2b1a12}
+.price{font-weight:bold;color:#2b1a12;font-size:18px}
 
 /* OPTIONS */
 .options-row{display:flex;gap:6px;margin-top:6px}
-select{flex:1;padding:5px;border-radius:6px}
+select{flex:1;padding:6px;border-radius:6px}
 
 /* WATERMARK */
 .wm-overlay{
@@ -78,6 +78,7 @@ select{flex:1;padding:5px;border-radius:6px}
 
 <div class="options-row">
 <select class="weight">
+<option value="0.5">0.5kg</option>
 <option value="1">1kg</option>
 <option value="1.5">1.5kg</option>
 <option value="2">2kg</option>
@@ -154,9 +155,8 @@ document.querySelectorAll('.card').forEach(card => {
     const flavour = flavourSelect.value;
     const weight = parseFloat(weightSelect.value);
 
-    // detect if base is 2kg cake
+    // detect base weight
     let baseWeight = weightSelect.options[0].value == "2" ? 2 : 1;
-
     let oneKgPrice = baseWeight === 2 ? baseCakePrice / 2 : baseCakePrice;
 
     const diff = oneKgPrice - basePrices["Black Forest"];
@@ -164,7 +164,10 @@ document.querySelectorAll('.card').forEach(card => {
 
     let finalPrice;
 
-    if(weight === 1){
+    if(weight === 0.5){
+      finalPrice = (flavourPrice / 2) + 50;
+    }
+    else if(weight === 1){
       finalPrice = flavourPrice;
     }
     else if(weight === 1.5){
@@ -177,7 +180,7 @@ document.querySelectorAll('.card').forEach(card => {
       finalPrice = (flavourPrice * 2.5) - 100;
     }
     else if(weight === 3){
-      finalPrice = (flavourPrice * 3) - 200;
+      finalPrice = (flavourPrice * 3) - 100;
     }
 
     priceText.innerText = Math.round(finalPrice);
