@@ -59,6 +59,10 @@ h2{text-align:center;margin-bottom:25px}
   position:relative;
   overflow:hidden;
 }
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 16px 40px rgba(0,0,0,.12);
+}
 .card img{
   width:100%;
   aspect-ratio:1/1;
@@ -91,9 +95,12 @@ h2{text-align:center;margin-bottom:25px}
 }
 .select-box{
   flex:1;
-  padding:6px;
+  padding:6px 10px;
   border-radius:8px;
   border:1px solid #eee;
+  background:#fff;
+  font-size:12px;
+  font-weight:600;
 }
 
 /* WATERMARK */
@@ -109,6 +116,14 @@ h2{text-align:center;margin-bottom:25px}
   font-size:14px;
   color:rgba(0,0,0,0.15);
   transform:rotate(-18deg);
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .products{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:400px){
+  .products{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -130,12 +145,45 @@ h2{text-align:center;margin-bottom:25px}
 
 <div class="products">
 
-<!-- PRODUCT -->
+<!-- PRODUCT 1 -->
 <div class="card" data-id="MY-001">
 <img src="images/mycake1.jpg">
 <h4>Custom Birthday Cake</h4>
 
 <div class="price">₹<span class="price-value">1000</span></div>
+
+<div class="options-row">
+<select class="select-box weight">
+<option value="1">1kg</option>
+<option value="1.5">1.5kg</option>
+<option value="2">2kg</option>
+<option value="2.5">2.5kg</option>
+<option value="3">3kg</option>
+</select>
+
+<select class="select-box flavour">
+<option>Black Forest</option>
+<option>Chocolate</option>
+<option>Pineapple</option>
+<option>Strawberry</option>
+<option>Red Velvet</option>
+<option>Mango</option>
+<option>Butterscotch</option>
+<option>Blueberry</option>
+</select>
+</div>
+
+<div style="font-size:11px;color:#999;margin-top:4px;">
+Aadesh Bakery • Jivraj Park
+</div>
+</div>
+
+<!-- PRODUCT 2 -->
+<div class="card" data-id="MY-002">
+<img src="images/mycake2.jpg">
+<h4>Photo Printed Cake</h4>
+
+<div class="price">₹<span class="price-value">1200</span></div>
 
 <div class="options-row">
 <select class="select-box weight">
@@ -210,7 +258,7 @@ document.querySelectorAll('.card').forEach(card => {
       finalPrice = (flavourPrice * 2.5) - 100;
     }
     else if(weight === 3){
-      finalPrice = (flavourPrice * 3) - 100;
+      finalPrice = (flavourPrice * 3) - 200; // ✅ UPDATED
     }
 
     priceText.innerText = Math.round(finalPrice);
