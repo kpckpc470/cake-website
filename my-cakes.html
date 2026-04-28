@@ -164,7 +164,7 @@ document.querySelectorAll('.card').forEach(card => {
     let baseWeight = weightSelect.options[0].value == "2" ? 2 : 1;
     let oneKgPrice = baseWeight === 2 ? baseCakePrice / 2 : baseCakePrice;
 
-    const diff = oneKgPrice - basePrices["Black Forest"];
+    const diff = oneKgPrice - basePrices["Pineapple"];
     let flavourPrice = basePrices[flavour] + diff;
 
     let finalPrice;
