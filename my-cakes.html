@@ -7,7 +7,7 @@
 
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:#ffffff;color:#1a1a1a;-webkit-font-smoothing:antialiased}
+body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:#ffffff;color:#1a1a1a}
 
 /* NAV */
 nav{
@@ -114,13 +114,21 @@ h2{
   font-size:18px;
 }
 
-.subtitle{
+/* DROPDOWN */
+.weight-select{
+  margin-top:6px;
+  padding:6px 10px;
+  border-radius:8px;
+  border:1px solid #eee;
+  background:#fff;
   font-size:12px;
-  color:#666;
-  background:#f5f5f5;
-  display:inline-block;
-  padding:3px 8px;
-  border-radius:6px;
+  font-weight:600;
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+  cursor:pointer;
+}
+
+.weight-select:hover{
+  box-shadow:0 6px 18px rgba(0,0,0,.12);
 }
 
 /* WATERMARK */
@@ -170,8 +178,16 @@ h2{
     <div class="card" data-id="MY-001">
       <img src="images/mycake1.jpg">
       <h4>Custom Birthday Cake</h4>
-      <div class="price">₹600</div>
-      <div class="subtitle">1kg</div>
+      <div class="price">₹600 (1kg)</div>
+
+      <select class="weight-select">
+        <option>1kg</option>
+        <option>1.5kg</option>
+        <option>2kg</option>
+        <option>2.5kg</option>
+        <option>3kg</option>
+      </select>
+
       <div style="font-size:11px;color:#999;margin-top:4px;">
         Aadesh Bakery • Jivraj Park
       </div>
@@ -181,41 +197,16 @@ h2{
     <div class="card" data-id="MY-002">
       <img src="images/mycake2.jpg">
       <h4>Photo Printed Cake</h4>
-      <div class="price">₹750</div>
-      <div class="subtitle">1kg</div>
-      <div style="font-size:11px;color:#999;margin-top:4px;">
-        Aadesh Bakery • Jivraj Park
-      </div>
-    </div>
+      <div class="price">₹750 (1kg)</div>
 
-      <!-- PRODUCT 2 -->
-    <div class="card" data-id="MY-002">
-      <img src="images/mycake2.jpg">
-      <h4>Photo Printed Cake</h4>
-      <div class="price">₹750</div>
-      <div class="subtitle">1kg</div>
-      <div style="font-size:11px;color:#999;margin-top:4px;">
-        Aadesh Bakery • Jivraj Park
-      </div>
-    </div>
+      <select class="weight-select">
+        <option>1kg</option>
+        <option>1.5kg</option>
+        <option>2kg</option>
+        <option>2.5kg</option>
+        <option>3kg</option>
+      </select>
 
-      <!-- PRODUCT 2 -->
-    <div class="card" data-id="MY-002">
-      <img src="images/mycake2.jpg">
-      <h4>Photo Printed Cake</h4>
-      <div class="price">₹750</div>
-      <div class="subtitle">1kg</div>
-      <div style="font-size:11px;color:#999;margin-top:4px;">
-        Aadesh Bakery • Jivraj Park
-      </div>
-    </div>
-
-      <!-- PRODUCT 2 -->
-    <div class="card" data-id="MY-002">
-      <img src="images/mycake2.jpg">
-      <h4>Photo Printed Cake</h4>
-      <div class="price">₹750</div>
-      <div class="subtitle">1kg</div>
       <div style="font-size:11px;color:#999;margin-top:4px;">
         Aadesh Bakery • Jivraj Park
       </div>
@@ -225,8 +216,16 @@ h2{
     <div class="card" data-id="MY-003">
       <img src="images/mycake3.jpg">
       <h4>Theme Designer Cake</h4>
-      <div class="price">₹1200</div>
-      <div class="subtitle">2kg</div>
+      <div class="price">₹1200 (1kg)</div>
+
+      <select class="weight-select">
+        <option>1kg</option>
+        <option>1.5kg</option>
+        <option>2kg</option>
+        <option>2.5kg</option>
+        <option>3kg</option>
+      </select>
+
       <div style="font-size:11px;color:#999;margin-top:4px;">
         Aadesh Bakery • Jivraj Park
       </div>
