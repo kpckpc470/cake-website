@@ -155,7 +155,6 @@ document.querySelectorAll('.card').forEach(card => {
     const flavour = flavourSelect.value;
     const weight = parseFloat(weightSelect.value);
 
-    // detect base weight
     let baseWeight = weightSelect.options[0].value == "2" ? 2 : 1;
     let oneKgPrice = baseWeight === 2 ? baseCakePrice / 2 : baseCakePrice;
 
@@ -188,6 +187,10 @@ document.querySelectorAll('.card').forEach(card => {
 
   weightSelect.addEventListener('change', updatePrice);
   flavourSelect.addEventListener('change', updatePrice);
+
+  // ✅ THIS LINE MAKES DEFAULT PRICE MINIMUM
+  updatePrice();
+
 });
 
 // WATERMARK
