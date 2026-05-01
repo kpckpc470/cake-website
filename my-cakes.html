@@ -400,8 +400,6 @@ const basePrices = {
 "German Chocolate":850
 };
 
-  <script>
-
 fetch('mycakes.json')
 .then(res => res.json())
 .then(data => {
@@ -448,9 +446,6 @@ function generateWeights(min){
     .map(w => `<option value="${w}">${w}kg</option>`)
     .join('');
 }
-
-</script>
-
 // INSERT FLAVOURS INTO ALL DROPDOWNS
 document.querySelectorAll('.flavour').forEach(select => {
   flavourList.forEach(f => {
