@@ -1,12 +1,60 @@
 [
   {
-    "image": "images/mycake15.jpg",
+    "image": "images/mycake1.jpg",
     "name": "Chocolate Dream Cake",
     "price": 900,
     "minWeight": 1
   },
   {
-    "image": "images/mycake16.jpg",
+    "image": "images/mycake2.jpg",
+    "name": "Red Velvet Love Cake",
+    "price": 1100,
+    "minWeight": 1.5
+  },
+  {
+    "image": "images/mycake3.jpg",
+    "name": "Chocolate Dream Cake",
+    "price": 900,
+    "minWeight": 1
+  },
+  {
+    "image": "images/mycake4.jpg",
+    "name": "Red Velvet Love Cake",
+    "price": 1100,
+    "minWeight": 1.5
+  },
+  {
+    "image": "images/mycake5.jpg",
+    "name": "Chocolate Dream Cake",
+    "price": 900,
+    "minWeight": 1
+  },
+  {
+    "image": "images/mycake6.jpg",
+    "name": "Red Velvet Love Cake",
+    "price": 1100,
+    "minWeight": 1.5
+  },
+  {
+    "image": "images/mycake7.jpg",
+    "name": "Chocolate Dream Cake",
+    "price": 900,
+    "minWeight": 1
+  },
+  {
+    "image": "images/mycake8.jpg",
+    "name": "Red Velvet Love Cake",
+    "price": 1100,
+    "minWeight": 1.5
+  },
+  {
+    "image": "images/mycake9.jpg",
+    "name": "Chocolate Dream Cake",
+    "price": 900,
+    "minWeight": 1
+  },
+  {
+    "image": "images/mycake10.jpg",
     "name": "Red Velvet Love Cake",
     "price": 1100,
     "minWeight": 1.5
