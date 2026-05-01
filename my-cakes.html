@@ -400,6 +400,57 @@ const basePrices = {
 "German Chocolate":850
 };
 
+  <script>
+
+fetch('mycakes.json')
+.then(res => res.json())
+.then(data => {
+
+  const container = document.getElementById('products');
+
+  data.forEach((cake, i) => {
+
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.setAttribute('data-id', 'MY-' + String(i+1).padStart(3,'0'));
+
+    card.innerHTML = `
+      <img src="${cake.image}">
+      <h4>${cake.name}</h4>
+
+      <div class="price">₹<span class="price-value">${cake.price}</span></div>
+
+      <div class="options-row">
+        <select class="weight">
+          ${generateWeights(cake.minWeight)}
+        </select>
+
+        <select class="flavour"></select>
+      </div>
+
+      <div style="font-size:11px;color:#888;">
+        Min: ${cake.minWeight}kg
+      </div>
+    `;
+
+    container.appendChild(card);
+  });
+
+  insertFlavours();
+  setupPricing();
+
+});
+
+function generateWeights(min){
+  let weights = [0.5,1,1.5,2,2.5,3];
+  return weights
+    .filter(w => w >= min)
+    .map(w => `<option value="${w}">${w}kg</option>`)
+    .join('');
+}
+
+</script>
+
 // INSERT FLAVOURS INTO ALL DROPDOWNS
 document.querySelectorAll('.flavour').forEach(select => {
   flavourList.forEach(f => {
