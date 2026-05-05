@@ -161,58 +161,55 @@ function insertFlavours(){
 /* PRICING */
 function setupPricing(){
 
-document.querySelectorAll('.card').forEach(card => {
+  document.querySelectorAll('.card').forEach(card => {
 
-  const baseCakePrice = parseInt(card.querySelector('.price-value').innerText);
-  const weightSelect = card.querySelector('.weight');
-  const flavourSelect = card.querySelector('.flavour');
-  const priceText = card.querySelector('.price-value');
+    const baseCakePrice = parseInt(card.querySelector('.price-value').innerText);
+    const weightSelect = card.querySelector('.weight');
+    const flavourSelect = card.querySelector('.flavour');
+    const priceText = card.querySelector('.price-value');
 
-function updatePrice(){
+    function updatePrice(){
 
-  const flavour = flavourSelect.value;
-  const weight = parseFloat(weightSelect.value);
+      const flavour = flavourSelect.value;
+      const weight = parseFloat(weightSelect.value);
 
-  // 1️⃣ Base 1KG price from card
-  let oneKgPrice = baseCakePrice;
+      let oneKgPrice = baseCakePrice;
 
-  // 2️⃣ Adjust price based on flavour
-  const diff = oneKgPrice - basePrices["Pineapple"];
-  let flavourPrice = basePrices[flavour] + diff;
-  priceText.innerText = Math.round(finalPrice);
-     
+      const diff = oneKgPrice - basePrices["Pineapple"];
+      let flavourPrice = basePrices[flavour] + diff;
 
-  // 3️⃣ Apply your custom weight formula
-  let finalPrice;
+      let finalPrice;
 
-  if(weight === 0.5){
-    finalPrice = (flavourPrice / 2) + 50;
-  }
-  else if(weight === 1){
-    finalPrice = flavourPrice;
-  }
-  else if(weight === 1.5){
-    finalPrice = flavourPrice * 1.5;
-  }
-  else if(weight === 2){
-    finalPrice = (flavourPrice * 2) - 100;
-  }
-  else if(weight === 2.5){
-    finalPrice = (flavourPrice * 2.5) - 100;
-  }
-  else if(weight === 3){
-    finalPrice = (flavourPrice * 3) - 100;
-  }
+      if(weight === 0.5){
+        finalPrice = (flavourPrice / 2) + 50;
+      }
+      else if(weight === 1){
+        finalPrice = flavourPrice;
+      }
+      else if(weight === 1.5){
+        finalPrice = flavourPrice * 1.5;
+      }
+      else if(weight === 2){
+        finalPrice = (flavourPrice * 2) - 100;
+      }
+      else if(weight === 2.5){
+        finalPrice = (flavourPrice * 2.5) - 100;
+      }
+      else if(weight === 3){
+        finalPrice = (flavourPrice * 3) - 100;
+      }
 
-  priceText.innerText = Math.round(finalPrice);
+      priceText.innerText = Math.round(finalPrice);
+    }
 
-  weightSelect.addEventListener('change', updatePrice);
-  flavourSelect.addEventListener('change', updatePrice);
+    // ✅ CORRECT PLACE
+    weightSelect.addEventListener('change', updatePrice);
+    flavourSelect.addEventListener('change', updatePrice);
 
-  updatePrice();
-});
+    updatePrice(); // default load
+
+  });
 }
-
 /* WATERMARK */
 function addWatermark(){
 document.querySelectorAll('.card').forEach(card => {
