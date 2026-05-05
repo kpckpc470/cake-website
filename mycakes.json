@@ -1,56 +1,56 @@
 [
   {
     "image": "images/mycake1.jpg",
-    "name": "Chocolate Dream Cake",
-    "price": 900,
-    "minWeight": 1
+    "name": "Romantic Heart Cake",
+    "price": 1000,
+    "minWeight": 0.5
   },
   {
     "image": "images/mycake2.jpg",
-    "name": "Red Velvet Love Cake",
+    "name": "Floral Engagement Cake",
     "price": 1100,
-    "minWeight": 1.5
+    "minWeight": 2
   },
   {
     "image": "images/mycake3.jpg",
-    "name": "Chocolate Dream Cake",
-    "price": 900,
-    "minWeight": 1
-  },
-  {
-    "image": "images/mycake4.jpg",
-    "name": "Red Velvet Love Cake",
-    "price": 1100,
+    "name": "Moon & Star Kids Cake",
+    "price": 1200,
     "minWeight": 1.5
   },
   {
-    "image": "images/mycake5.jpg",
-    "name": "Chocolate Dream Cake",
-    "price": 900,
+    "image": "images/mycake4.jpg",
+    "name": "Pink Heart Celebration Cake 💗",
+    "price": 850,
     "minWeight": 1
+  },
+  {
+    "image": "images/mycake5.jpg",
+    "name": "Golden Floral Tier Cake 🌼",
+    "price": 1050,
+    "minWeight": 1.5
   },
   {
     "image": "images/mycake6.jpg",
     "name": "Red Velvet Love Cake",
-    "price": 1100,
+    "price": 900,
     "minWeight": 1.5
   },
   {
     "image": "images/mycake7.jpg",
-    "name": "Chocolate Dream Cake",
+    "name": "Black & Gold Luxe Cake 🖤✨",
     "price": 900,
     "minWeight": 1
   },
   {
     "image": "images/mycake8.jpg",
-    "name": "Red Velvet Love Cake",
-    "price": 1100,
+    "name": "Lavender Bloom Tier Cake 💜",
+    "price": 900,
     "minWeight": 1.5
   },
   {
     "image": "images/mycake9.jpg",
-    "name": "Chocolate Dream Cake",
-    "price": 900,
+    "name": "Cricket Theme Birthday Cake 🏏",
+    "price": 1050,
     "minWeight": 1
   },
   {
