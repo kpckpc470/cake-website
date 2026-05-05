@@ -55,8 +55,27 @@
   },
   {
     "image": "images/mycake10.jpg",
-    "name": "Red Velvet Love Cake",
+    "name": "Anniversary Calendar Cake 📅❤️",
+    "price": 700,
+    "minWeight": 0.5
+  } 
+  {
+    "image": "images/mycake11.jpg",
+    "name": "Baby Welcome Theme Cake 🍼",
     "price": 1100,
-    "minWeight": 1.5
-  }
+    "minWeight": 1
+  }, 
+  {
+    "image": "images/mycake12.jpg",
+    "name": "Romantic Heart Minimal Cake 💞",
+    "price": 900,
+    "minWeight": 1
+  }, 
+  {
+    "image": "images/mycake13.jpg",
+    "name": "Vintage Ribbon Heart Cake 🎀",
+    "price": 900,
+    "minWeight": 1
+  },
+  
 ]
