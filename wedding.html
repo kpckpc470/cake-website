@@ -7,134 +7,47 @@
 
 <style>
 *{box-sizing:border-box}
-
-body{
-  margin:0;
-  font-family:'Segoe UI',Arial,sans-serif;
-  background:#ffffff;
-  color:#1a1a1a;
-}
+body{margin:0;font-family:'Segoe UI',Arial;background:#fff}
 
 /* NAV */
-nav{
-  position:sticky;
-  top:0;
-  background:linear-gradient(135deg,#1a0f0a,#2b1a12);
-  padding:14px;
-  z-index:1000;
-}
-
-nav .links{
-  display:flex;
-  gap:14px;
-  justify-content:center;
-}
-
-nav a{
-  color:#fff;
-  text-decoration:none;
-  font-size:13px;
-  padding:8px 16px;
-  border-radius:999px;
-}
-
-nav a:hover{
-  background:#fff;
-  color:#2b1a12;
-}
-
-/* CONTAINER */
-.container{
-  max-width:1400px;
-  margin:auto;
-  padding:30px 18px;
-}
-
-h2{
-  text-align:center;
-  margin-bottom:20px;
-}
-
-/* FILTER BUTTON */
-.filter-btn{
-  border:none;
-  background:#f3f3f3;
-  padding:9px 18px;
-  margin:5px;
-  border-radius:999px;
-  cursor:pointer;
-  font-size:13px;
-  font-weight:600;
-}
-
-.filter-btn.active,
-.filter-btn:hover{
-  background:#2b1a12;
-  color:#fff;
-}
+nav{position:sticky;top:0;background:linear-gradient(#1a0f0a,#2b1a12);padding:14px}
+nav .links{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+nav a{color:#fff;text-decoration:none;padding:8px 14px;border-radius:999px}
+nav a:hover{background:#fff;color:#2b1a12}
 
 /* GRID */
-.products{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:20px;
-}
+.container{max-width:1200px;margin:auto;padding:20px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
 
 /* CARD */
-.card{
-  background:#fff;
-  border-radius:16px;
-  padding:12px;
-  box-shadow:0 6px 20px rgba(0,0,0,.08);
-  transition:.3s;
-}
+.card{background:#fff;border-radius:14px;padding:12px;box-shadow:0 4px 15px rgba(0,0,0,.08);position:relative}
+.card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px}
 
-.card:hover{
-  transform:translateY(-6px);
-}
-
-.card img{
-  width:100%;
-  aspect-ratio:1/1;
-  object-fit:cover;
-  border-radius:12px;
+/* BADGE */
+.card::before{
+  content:attr(data-id);
+  position:absolute;
+  top:8px;left:8px;
+  background:#000;color:#fff;
+  font-size:10px;padding:4px 10px;border-radius:999px;
 }
 
 /* TEXT */
-.card h4{
-  margin:10px 0 5px;
-  font-size:15px;
-}
+.price{font-weight:bold;color:#2b1a12;font-size:18px}
 
-/* PRICE */
-.price{
-  font-size:22px;
-  font-weight:800;
-  margin:6px 0;
-}
+/* OPTIONS */
+.options-row{display:flex;gap:6px;margin-top:6px}
+select{flex:1;padding:6px;border-radius:6px}
 
-/* WEIGHT BOX */
-.weight-box{
-  background:#f2f2f2;
-  padding:8px 12px;
-  border-radius:10px;
-  font-size:13px;
-  font-weight:600;
-  color:#555;
-  margin-bottom:6px;
+/* WATERMARK */
+.wm-overlay{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  pointer-events:none;
 }
-
-/* LOCATION */
-.location{
-  font-size:12px;
-  color:#888;
-}
-
-/* MOBILE */
-@media(max-width:600px){
-  .products{
-    grid-template-columns:repeat(2,1fr);
-  }
+.wm-overlay span{
+  color:rgba(0,0,0,0.15);
+  transform:rotate(-18deg);
 }
 </style>
 </head>
@@ -142,80 +55,170 @@ h2{
 <body>
 
 <nav>
-  <div class="links">
-    <a href="index.html">Home</a>
-    <a href="regular.html">Regular</a>
-    <a href="designer.html">Designer</a>
-    <a href="wedding.html">Wedding</a>
-    <a href="my-cakes.html">My Cakes</a> <!-- NEW -->
-  </div>
+<div class="links">
+<a href="index.html">Home</a>
+<a href="regular.html">Regular</a>
+<a href="designer.html">Designer</a>
+<a href="wedding.html">Wedding</a>
+<a href="my-cakes.html">My Cakes</a>
+</div>
 </nav>
 
 <div class="container">
-<h2>Regular Cakes</h2>
-
-<!-- FILTER -->
-<div style="text-align:center;margin-bottom:20px;">
-  <button class="filter-btn active" onclick="filterCake('all', this)">All</button>
-  <button class="filter-btn" onclick="filterCake('chocolate', this)">Chocolate</button>
-  <button class="filter-btn" onclick="filterCake('fruit', this)">Fruit</button>
-</div>
-
-<div class="products">
-
-<!-- SAMPLE PRODUCTS (Add rest same way) -->
-
-<div class="card">
-  <img src="images/cake1.jpg">
-  <h4>Kiwi Strawberry Glaze Cake</h4>
-  <div class="price">₹400</div>
-  <div class="weight-box">500gm</div>
-  <div class="location">Aadesh Bakery • Jivraj Park</div>
-</div>
-
-<div class="card">
-  <img src="images/cake2.jpg">
-  <h4>Caramel Almond Crunch Cake</h4>
-  <div class="price">₹430</div>
-  <div class="weight-box">500gm</div>
-  <div class="location">Aadesh Bakery • Jivraj Park</div>
-</div>
-
-<div class="card">
-  <img src="images/cake3.jpg">
-  <h4>White Chocolate Marble Cake</h4>
-  <div class="price">₹420</div>
-  <div class="weight-box">500gm</div>
-  <div class="location">Aadesh Bakery • Jivraj Park</div>
-</div>
-
-</div>
+<h2>Wedding Cakes</h2>
+<div class="products" id="products"></div>
 </div>
 
 <script>
 
-/* FILTER FUNCTION */
-function filterCake(category, btn){
-  const cards = document.querySelectorAll('.card');
+const startID = 1;
 
-  document.querySelectorAll('.filter-btn')
-    .forEach(b => b.classList.remove('active'));
+/* SAME FLAVOURS */
+const flavourList = [
+"Pineapple","Strawberry","Mango","Orange","White Forest","Black Forest",
+"Black Current","Classic Black Forest","Raspberry","Mix Fruit","Blueberry",
+"German Forest","Kiwi Strawberry","Choco-Vanilla","Caramal","Butterscotch",
+"Belgium Chocolate","Choco-Oreo","Tiramisu","Choco-Delight","Choco-Chips",
+"Coffee","Choco-Mousse","Dark-Mousse","Choco-Duet Mousse","Green Apple",
+"Chocolate Praline","Rose Pista","Kesar Badam","Choco-Orange","Milk-Choco",
+"Hazelnut","Choco-Ball","Ferrero Rocher","KitKat & Jems","Rasmalai",
+"Choco-Caramal","Choco-Almond","Red Velvet","Choco-Fudge","Dutch Truffle",
+"German Chocolate"
+];
 
-  btn.classList.add('active');
+/* SAME BASE PRICES */
+const basePrices = {
+"Pineapple":800,"Strawberry":800,"Mango":800,"Orange":840,"White Forest":820,"Black Forest":820,
+"Black Current":760,"Classic Black Forest":860,"Raspberry":900,"Mix Fruit":840,"Blueberry":820,
+"German Forest":840,"Kiwi Strawberry":800,"Choco-Vanilla":820,"Caramal":850,"Butterscotch":830,
+"Belgium Chocolate":1200,"Choco-Oreo":920,"Tiramisu":920,"Choco-Delight":870,"Choco-Chips":850,
+"Coffee":900,"Choco-Mousse":850,"Dark-Mousse":850,"Choco-Duet Mousse":860,"Green Apple":800,
+"Chocolate Praline":880,"Rose Pista":860,"Kesar Badam":860,"Choco-Orange":880,"Milk-Choco":880,
+"Hazelnut":940,"Choco-Ball":900,"Ferrero Rocher":1200,"KitKat & Jems":1100,"Rasmalai":900,
+"Choco-Caramal":920,"Choco-Almond":880,"Red Velvet":950,"Choco-Fudge":920,"Dutch Truffle":950,
+"German Chocolate":850
+};
 
-  cards.forEach(card => {
-    const name = card.querySelector('h4').innerText.toLowerCase();
+/* LOAD JSON */
+fetch('wedding.json')
+.then(res => res.json())
+.then(data => {
 
-    if(category === 'all'){
-      card.style.display = 'block';
-    }
-    else if(name.includes(category)){
-      card.style.display = 'block';
-    }
-    else{
-      card.style.display = 'none';
-    }
+  const container = document.getElementById('products');
+
+  data.forEach((cake, i) => {
+
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.setAttribute('data-id', 'WD-' + String(i + startID).padStart(3,'0'));
+
+    card.innerHTML = `
+      <img src="${cake.image}">
+      <h4>${cake.name}</h4>
+
+      <div class="price">₹<span class="price-value">${cake.price}</span></div>
+
+      <div class="options-row">
+        <select class="weight">
+          ${generateWeights(cake.minWeight)}
+        </select>
+
+        <select class="flavour"></select>
+      </div>
+
+      <div style="font-size:11px;color:#888;">
+        Min: ${cake.minWeight}kg
+      </div>
+    `;
+
+    container.appendChild(card);
   });
+
+  insertFlavours();
+  setupPricing();
+  addWatermark();
+
+});
+
+/* SAME WEIGHT LIST */
+function generateWeights(min){
+  let weights = [0.5,1,1.5,2,2.5,3];
+  return weights
+    .filter(w => w >= min)
+    .map(w => `<option value="${w}">${w}kg</option>`)
+    .join('');
+}
+
+/* INSERT FLAVOURS */
+function insertFlavours(){
+  document.querySelectorAll('.flavour').forEach(select => {
+    flavourList.forEach(f => {
+      const opt = document.createElement('option');
+      opt.textContent = f;
+      select.appendChild(opt);
+    });
+  });
+}
+
+/* SAME PRICING FORMULA */
+function setupPricing(){
+
+  document.querySelectorAll('.card').forEach(card => {
+
+    const baseCakePrice = parseInt(card.querySelector('.price-value').innerText);
+    const weightSelect = card.querySelector('.weight');
+    const flavourSelect = card.querySelector('.flavour');
+    const priceText = card.querySelector('.price-value');
+
+    function updatePrice(){
+
+      const flavour = flavourSelect.value;
+      const weight = parseFloat(weightSelect.value);
+
+      let oneKgPrice = baseCakePrice;
+
+      const diff = oneKgPrice - basePrices["Pineapple"];
+      let flavourPrice = basePrices[flavour] + diff;
+
+      let finalPrice;
+
+      if(weight === 0.5){
+        finalPrice = (flavourPrice / 2) + 50;
+      }
+      else if(weight === 1){
+        finalPrice = flavourPrice;
+      }
+      else if(weight === 1.5){
+        finalPrice = flavourPrice * 1.5;
+      }
+      else if(weight === 2){
+        finalPrice = (flavourPrice * 2) - 100;
+      }
+      else if(weight === 2.5){
+        finalPrice = (flavourPrice * 2.5) - 100;
+      }
+      else if(weight === 3){
+        finalPrice = (flavourPrice * 3) - 100;
+      }
+
+      priceText.innerText = Math.round(finalPrice);
+    }
+
+    weightSelect.addEventListener('change', updatePrice);
+    flavourSelect.addEventListener('change', updatePrice);
+
+    updatePrice();
+  });
+}
+
+/* WATERMARK */
+function addWatermark(){
+document.querySelectorAll('.card').forEach(card => {
+  const wm = document.createElement('div');
+  wm.className = 'wm-overlay';
+  wm.innerHTML = '<span>Aadesh Bakery • Jivraj Park</span>';
+  card.appendChild(wm);
+});
 }
 
 </script>
