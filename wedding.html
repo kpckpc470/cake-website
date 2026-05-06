@@ -10,11 +10,70 @@
 body{margin:0;font-family:'Segoe UI',Arial;background:#fff}
 
 /* NAV */
-nav{position:sticky;top:0;background:linear-gradient(#1a0f0a,#2b1a12);padding:14px}
-nav .links{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
-nav a{color:#fff;text-decoration:none;padding:8px 14px;border-radius:999px}
-nav a:hover{background:#fff;color:#2b1a12}
+/* NAV - LUXURY */
+nav{
+  position:sticky;
+  top:0;
+  background:linear-gradient(135deg,#1a0f0a,#2b1a12);
+  padding:14px;
+  z-index:1000;
+  box-shadow:0 6px 25px rgba(0,0,0,.3);
+  overflow:hidden;
+}
 
+/* gold shine line */
+nav::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:2px;
+  background:linear-gradient(90deg,transparent,#d4af37,transparent);
+  opacity:.7;
+}
+
+nav .links{
+  display:flex;
+  gap:14px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+nav a{
+  color:#fff;
+  text-decoration:none;
+  font-size:13px;
+  padding:8px 16px;
+  border-radius:999px;
+  transition:.3s;
+  letter-spacing:.5px;
+  position:relative;
+}
+
+/* underline animation */
+nav a::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:4px;
+  width:0%;
+  height:2px;
+  background:#d4af37;
+  transition:.3s;
+  transform:translateX(-50%);
+}
+
+nav a:hover::after{
+  width:60%;
+}
+
+nav a:hover{
+  background:#ffffff;
+  color:#2b1a12;
+  transform:translateY(-3px);
+  box-shadow:0 6px 15px rgba(0,0,0,.2);
+}
 /* GRID */
 .container{max-width:1200px;margin:auto;padding:20px}
 .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
