@@ -99,18 +99,6 @@ const basePrices = {
 
 /* LOAD PRODUCTS FROM JSON */
 fetch('mycakes.json')
-  .then(res => {
-  if(!res.ok){
-    throw new Error("File not found");
-  }
-  return res.json();
-})
-.then(data => {
-  console.log("Loaded:", data);
-})
-.catch(err => {
-  console.error("Error:", err);
-});
 .then(res => res.json())
 .then(data => {
 
