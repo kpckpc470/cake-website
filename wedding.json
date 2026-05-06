@@ -1,1 +1,38 @@
-
+[
+  {
+    "image": "images/wedding1.jpg",
+    "name": "Royal Wedding Cake",
+    "price": 3000,
+    "minWeight": 2
+  },
+  {
+    "image": "images/wedding2.jpg",
+    "name": "Luxury Floral Cake",
+    "price": 3500,
+    "minWeight": 2.5
+  },
+  {
+    "image": "images/wedding3.jpg",
+    "name": "Elegant White Tier Cake",
+    "price": 2800,
+    "minWeight": 2
+  },
+  {
+    "image": "images/wedding4.jpg",
+    "name": "Golden Rose Wedding Cake",
+    "price": 4000,
+    "minWeight": 3
+  },
+  {
+    "image": "images/wedding5.jpg",
+    "name": "Classic Pearl Wedding Cake",
+    "price": 3200,
+    "minWeight": 2
+  },
+  {
+    "image": "images/wedding6.jpg",
+    "name": "Luxury Designer Wedding Cake",
+    "price": 4500,
+    "minWeight": 3
+  }
+]
